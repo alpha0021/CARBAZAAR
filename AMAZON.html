@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <title>AMAZONCAR.COM</title>
+  <style>
+  		.header{
+  			margin:auto;
+  			width:360px;
+  			margin-top: 120px;
+  			background: #75a3a3;
+  			padding:20px 30px 60px 80px;
+  		}
+  		.container{
+  			background-color:  #1f2e2e;
+  		}
+  </style>
+</head>
+  <body>
+   
+     <div class="container">
+
+  		<div class = "header">
+  			<h1 style = "font-family:verdana ; background-color:#cccc99;padding:28px 25px">CARBAZAAR.COM</h1>
+  			<P style= "font-family:verdana;margin-left:60px">a online  car  marketing apps</P>
+  		
+
+	  	<div ng-app="myApp" ng-controller="myCtrl">
+	  		<p style="margin-left:65px">Select the model  of the car :</p>
+	  		<select style="margin-left:150px;" ng-model="selectedCar" ng-options="x for (x,y) in cars">
+	  		</select>	
+	  		<h2 style= "font-size:30px; text-align:center">You selected: {{selectedCar.brand}}</h2>
+	  		<h3 style= "font-size:30px;text-align:center">Model: {{selectedCar.model}}</h3>
+	  		<h4 style= "font-size:30px;text-align:center">Color: {{selectedCar.color}}</h4>
+	  		<h5 style= "font-size:30px;text-align:center">Price: {{selectedCar.price}}</h5>
+	  	</div>
+    </div>
+
+    </div>
+  	<script>
+  		/*var app = angular.module('myApp',[]);
+  		app.controller('myCtrl',function($scope){
+  			$scope.cars = {
+  				car01 : {brand : "Ford", model : "Mustang", color :"red"},
+  				car02 : {brand : "Fiat", model :"500", color : "black"},
+  				car03 : {brand :"Volvo", model :"400", color :"pink"}
+  			}
+  		});*/
+		var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.cars = {
+        car01 : {brand : "Ford", model : "Mustang", color : "red", price :990 },
+        car02 : {brand : "Fiat", model : "500", color : "white", price :900},
+        car03 : {brand : "Volvo", model : "XC90", color : "black", price :1020}
+    }
+});
+  	</script>
+
+  </body>		
+</head>
